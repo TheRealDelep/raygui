@@ -1050,6 +1050,7 @@ namespace rg
 
 #if defined(__cplusplus)
     } // Prevents name mangling of functions
+    } // encaplsulate in namespace rg
 #endif
 
 #endif // RAYGUI_H
@@ -1059,7 +1060,6 @@ namespace rg
      *   RAYGUI IMPLEMENTATION
      *
      ************************************************************************************/
-
 #if defined(RAYGUI_IMPLEMENTATION)
 
 #include <stdio.h>  // Required for: FILE, fopen(), fclose(), fprintf(), feof(), fscanf(), vsprintf() [GuiLoadStyle(), GuiLoadIcons()]
@@ -1067,6 +1067,10 @@ namespace rg
 #include <string.h> // Required for: strlen() [GuiTextBox(), GuiValueBox()], memset(), memcpy()
 #include <stdarg.h> // Required for: va_list, va_start(), vfprintf(), va_end() [TextFormat()]
 #include <math.h>   // Required for: roundf() [GuiColorPicker()]
+
+#if defined(__cplusplus)
+namespace rg {
+#endif
 
 #ifdef __cplusplus
 #define RAYGUI_CLITERAL(name) name
